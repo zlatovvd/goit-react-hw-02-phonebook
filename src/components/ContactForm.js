@@ -18,8 +18,8 @@ class ContactForm extends Component {
   handleSubmit = event => {
     event.preventDefault();
     const { onSubmit } = this.props;
-    let isContact = onSubmit({ ...this.state });
-    if (!isContact) {
+    
+    if (onSubmit({ ...this.state })) {
       this.reset();
     }
     

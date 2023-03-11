@@ -20,7 +20,7 @@ class App extends Component {
   };
 
   onSubmit = ({ name, number }) => {
-    let isContact = false;
+    let isSubmit = false;
     const { contacts } = this.state;
     if (
       !contacts.some(value =>
@@ -35,11 +35,11 @@ class App extends Component {
       this.setState(prevState => ({
         contacts: [contact, ...prevState.contacts],
       }));
+      isSubmit = true;
     } else {
-      isContact = true;
       alert(`${name} is already in contacts.`);
     }
-    return isContact;
+    return isSubmit;
   };
 
   onDelete = contactId => {
